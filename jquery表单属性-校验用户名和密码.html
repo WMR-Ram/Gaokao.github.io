@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>woed</title>
+    <style>
+        span {
+            color: #ccc;
+        }
+        .right {
+            color: greenyellow;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $("input").blur(function(){
+                console.log($(this).val().length);
+                if($(this).val().length<6 || $(this).val().length>20){
+                    $("span").eq($(this).index()).addClass("wrong");
+                    $("span").eq($(this).index()).html("账号必须是6-20位之间");
+                    
+                }else{
+                    $("span").eq($(this).index()).addClass("right");
+                    $("span").eq($(this).index()).html("恭喜您输入正确");
+                }
+            })
+        })
+    </script>
+    
+</head>
+<body>
+
+    账号：<input type="text"/><span>请输入内容</span><br><br>
+    密码：<input type="password"/><span>请输入内容</span>
+
+</body>
+</html>
