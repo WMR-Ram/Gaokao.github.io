@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D</title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            margin: 10px;
+            padding-left: 10px;
+        }
+        label {
+            position: absolute;
+            top: 102px;
+            left: 80px;
+            color: #ccc;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $("input:eq(0)").focus(function(){
+                // console.log($(this).val());
+                if($(this).val() == "鞋子"){
+                    $(this).val("");
+                }
+            })        
+            $("input:eq(0)").blur(function(){
+                if($(this).val() === ""){
+                    $(this).val("鞋子");
+                }
+            })
+
+            //第二个：模拟淘宝框；
+            //只要在input中输入内容或者删除内容就进行判断：
+            // 如果内容为空就显示label否则就隐藏label；
+
+            // onpropertychange会在设置disable=true的时候失效。
+            // 而且，onpropertychange是在触发对象改变任何属性时都会触发。
+            // 而oninput只是在改变input的value值时才触发。
+            // oninput 事件：不但JS 改变 value 值时不能触发，有从浏览器的自
+            // 动下拉提示中选值时，也不会触发。
+            // onpropertychange触发函数只有一个默认参数，是所以可以触发属性的集合
+            // console.log($("input:eq(1)"));
+            var inpArr = document.getElementsByTagName("input");
+            // var label = document.getElementsByClassName("label")[0];
+            var label = document.getElementsByTagName("label")[0];
+        
+            // console.log(label.className)
+            inpArr[1].oninput = inpArr[1].onpropertychange = function () {
+                //判断：input的value值是否为空字符串
+                if(this.value === ""){
+                    //显示label
+                    label.className = "";
+                }else{
+                    //input中有内容，就该隐藏label
+                    label.className = "hide";
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+
+    京东：<input type="text" value="鞋子"/><br/><br/>
+    淘宝：<label for="inp2">袜子</label><input id="inp2" type="text"/><br/><br/>
+    placeholder：<input type="text" placeholder="裙子"/>
+</body>
+</html>

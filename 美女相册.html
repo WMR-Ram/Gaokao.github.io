@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+            body {
+                font-family: "Helvetica", "Arial", serif;
+                color: #333;
+                background-color: #ccc;
+                margin: 1em 10%;
+            }
+
+            h1 {
+                color: #333;
+                background-color: transparent;
+            }
+
+            a {
+                color: #c60;
+                background-color: transparent;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            ul {
+                padding: 0;
+            }
+
+            li {
+                float: left;
+                padding: 1em;
+                list-style: none;
+            }
+
+            #imagesgallery {
+
+                list-style: none;
+            }
+
+            #imagesgallery li {
+                margin: 0px 20px 20px 0px;
+                padding: 0px;
+                display: inline;
+            }
+
+            #imagesgallery li a img {
+                border: 0;
+            }
+        </style>
+        <script src="jquery-1.11.1.js"></script>
+        <script>
+            $(window).load(function () {
+
+                // <!--href: 如果什么都不写，刷新页面;(出bug最多)-->
+                // <!--href: #，跳转到页面最顶端;-->
+                // <!--href: javascript:;         点了也白点;-->
+                // <!--href: javascript:void(0);  点了也白点;-->
+ 
+                $("#imagesgallery li").delegate("a","click",function () {
+                    $("div").siblings("img").attr('src',$(this).attr("href"))
+                    
+                    
+                    $("div").siblings("p").html($(this).attr('title'));
+                    // 禁止a链接跳转
+                    return false;
+                })
+            })
+        </script>
+
+    </head>
+
+    <body>
+        <h2>
+            美女画廊
+        </h2>
+        <a href="#">注册</a>
+        <ul id="imagesgallery">
+            <li>
+                <a href="images/1.jpg" title="美女A">
+                    <img src="images/1-small.jpg" width="100" alt="美女1" />
+                </a>
+            </li>
+            <li>
+                <a href="images/2.jpg" title="美女B">
+                    <img src="images/2-small.jpg" width="100" alt="美女2" />
+                </a>
+            </li>
+            <li>
+                <a href="images/3.jpg" title="美女C">
+                    <img src="images/3-small.jpg" width="100" alt="美女3" />
+                </a>
+            </li>
+            <li>
+                <a href="images/4.jpg" title="美女D">
+                    <img src="images/4-small.jpg" width="100" alt="美女4" />
+                </a>
+            </li>
+        </ul>
+
+
+        <div style="clear:both"></div>
+        <img id="images" src="images/placeholder.png" width="450px" />
+        <p id="des">选择一个图片</p>
+
+
+    </body>
+
+</html>
