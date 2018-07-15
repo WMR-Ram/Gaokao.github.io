@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>works</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style:none;
+            color:#d3e0db;
+        }
+        #app{
+            width:900px;
+            padding-top:30px;
+            background:#137049;
+            margin: 50px auto;
+            position: relative;
+        }
+        ul{
+            padding-top:10px;
+            width: 800px;
+            height:400px;
+            background:#137049;
+            text-align:center;
+            font:30px/30px 'simsun';
+            border-radius:10px;
+            margin:0 auto;
+            border:1px solid#bac9c3;
+        }
+        li{
+            width: 80px;
+            height:30px;
+            font:20px/24px 'simsun';
+            text-align:center;
+            line-height:30px;
+            border: 1px solid #199c66;
+            border-radius:7px;
+            margin:2px 1rem;
+            color:#fff;
+            float:left;
+            cursor:pointer;
+        }
+        #box{
+            margin:0 auto;
+            width: 332px;
+            padding:10px;
+            height: 40px;
+        }
+        label{
+            color:#d3e0db;
+            position: absolute;
+            top:456px;
+            left:286px;
+        }
+        
+        #box div{
+            border:1px solid #ccc;
+            width: 235px;
+            height: 29px;
+            border-radius:5px;
+            float:right;
+            line-height: 26px;
+        }
+            
+        input,#btn{
+            box-shadow: none;
+            border:none;
+            vertical-align: middle;
+            line-height:27px;
+            background:#137049;
+            
+        }
+        #btn{
+            border-left:none;
+            border-radius:5px;
+            height:28px;
+            padding:0 3px;
+            top:1px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <ul id='names'>
+            <div>随机点名</div>
+       </ul>
+        <div id="box">
+            <label for="inp1">请输入人数：</label>
+            <div>
+                <!-- <input type="text" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/" />  -->
+                <input id = "inp" type="text" selected>|<button id="btn">单人随机</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var arr = ["郭文成","辛奕","牟亚男","李春燕","孙婷婷","吴昊喆","卢盼","孙美红","张欢",
+        "赵盟","李婉莹","李明月","侯思羽","曹雪","武素超","何惠云","张梦雅","张囡",
+        "侯晶晶","张占鹏","冀利强","刘姿姿","岳献琴","李木","王梦君","刘粟","夏祥云",
+        "张丽娜","陈俊","杜锴扬","柳旭","贺龙","张硕","高娜娜","杨晓燕","秦超月",
+        "石魏岩","王娟","陈斌","王秋然","赵威亚","延昌","张润昊","王俊飞","闫访",
+        "陈传军","张彩蝶","张兵","梁洪义","王光明","张雄","李新闻","董丽茹","张鹏",
+        "胡伟","于伟","杨章波","刘梦阳","李经伟","费亮禹","李瑞","邹杰","雷闯",
+        "王巍巍","李晓彤","张培蕾","王超"
+    ];
+    var ul = document.getElementById('names');
+    for(var i=0;i<arr.length;i++){
+        var li = document.createElement('li');
+        li.innerText = arr[i];
+        ul.appendChild(li); 
+    }
+    var li = ul.getElementsByTagName('li');
+    var bool;
+    var btn = document.getElementById('btn');
+    var inp = document.getElementById('inp');
+    var timer = null;
+    
+    btn.onclick = function (){
+        clearInterval(timer);
+        if(bool){
+            // alert(111);
+            dd();
+            bool = inp.disabled = false;            
+            clearInterval(timer);
+        }else{
+            bool = inp.disabled = true;
+            btn.innerText = '停止随机';
+            timer = setInterval(function(){
+                var Arr = [];
+                for(var i=0;i<li.length;i++){
+                    li[i].style.backgroundColor = '';
+                }
+                for(var i=0;i<1/0;i++){
+                    var num = parseInt(Math.random()*arr.length);
+                    
+                    var pd = parseInt(inp.value);
+                    
+                    if(typeof pd === 'number' && 1 < pd && pd < arr.length && inp.value !==''){
+                        console.log(inp.value);
+                        if(Arr.indexOf(num) === -1){
+                            Arr[Arr.length] = num;
+                            li[num].style.backgroundColor= fn();
+                            if(Arr.length === parseInt(inp.value)){
+                                // console.log(Arr);
+                                // console.log('------------------------');
+                                break;
+                            }
+                        }
+                    }else if(inp.value===''){
+                            li[num].style.backgroundColor= fn();
+                            break;
+                        }else{
+                            // alert(1);
+                            alert('请输入正确的数字');
+                            dd();
+                            inp.disabled = false;
+                            inp.value = '';
+                            clearInterval(timer);
+                            break;
+                        }                     
+                        // bool = false;
+                        
+                }
+            },100); 
+        }
+         
+    }
+
+function fn(){
+    var num1 = parseInt(Math.random()*256);
+    var num2 = parseInt(Math.random()*256);
+    var num3 = parseInt(Math.random()*256);
+    var str  = 'rgb('+num2+','+num1+','+num3+')';
+    return str; 
+}
+
+
+
+inp.onkeyup = function(){
+    var str = inp.value.split('.');
+    var aaa = inp.value;
+    if((/\D/).test(aaa)){
+        console.log((/\D/).test(aaa));
+        alert('请输入正确的数字');
+        inp.value = '';
+    }
+    dd();
+}
+function dd(){
+    bool = inp.disabled = false;
+    parseInt(inp.value)>1?btn.innerText = '多人随机': btn.innerText = '单人随机';
+}
+
+    </script>
+</body>
+</html>
