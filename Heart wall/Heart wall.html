@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <link href="./xydos.css" type="text/css" rel="stylesheet" />
+        <script src="../jquery-1.12.4.min.js"></script>
+        <script src="xydos.js"></script>
+    </head>
+
+    <body>
+        <div class="mask">
+            <div class="title">
+                <span class="Ximg"></span>
+                <label for="prow">请输入密码:</label><br>
+                <span id = "hide" class="hide"></span><br>
+                <input type="password" id = "prow" class="prow"><br>
+                <button class="shuell">确定</button>
+            </div>
+        </div>
+        <div id="content">
+            <div class="tip1">
+                <div class="tip_h" title="双击关闭纸条">
+                    <div class="num">第[49568]条 2016-02-17 22:51:52</div>
+                    <div class="close" title="关闭纸条">×</div>
+                    <div class="clr"></div>
+                </div>
+                <div class="tip_c">
+                    赶紧毕业迎娶白富美
+                </div>
+                <div class="tip_f">
+                    <div class="icon">
+                        <img src="images/bpic_1.gif" alt="" title="">
+                    </div>
+                    <span class="dtime"></span>
+                    <div class="name">成真的人</div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <button id="btn">添加心愿</button>
+            <div id="jxy">
+                <span>许愿时间 （自动生成）</span>
+                <label for="inp1">写下心愿:
+                    <br>
+
+                </label>
+                <textarea id="text1" cols="30" rows="10"></textarea>
+                <div class="privary">
+                    <li>是否保密：</li>
+                    是：
+                    <input class="check" type="button" tada-n="y"> 否：
+                    <input class="check" type="button" tada-n="n">
+                </div>
+                <div class="privary1">
+                    <li>姓名</li>
+                    <input class="names" type="text">
+                </div>
+                <div class="time_x">
+                    <p>实现时间：</p>
+                    <input id="year" type="text" dir="rtl" class="nian time">
+                    <label for="year">年</label>
+                    <input id="month" type="text" dir="rtl" class="yue time">
+                    <label for="month">月</label>
+                    <input id="day" type="text" dir="rtl" class="ri time">
+                    <label for="day">日</label>
+                </div>
+
+                <!-- <span>距离实现还有：时间</span> -->
+                <button id="xytj">许愿</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>

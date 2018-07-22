@@ -1,0 +1,246 @@
+*{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+html{
+    height:100%;
+    width:100%
+}
+body {
+    /* position: relative; */
+    top:0;
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 12px;
+    width:100%;
+    height:100%;
+    background: url(images/3_thumb.jpg) no-repeat center;
+    background-color: #f6f5f1;
+}
+.mask{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: none;
+    background-color:rgba(0,0,0,0.8);
+}
+.title{
+    width:400px;
+    height: 280px;
+    background-color:#ccc;
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+    top:200px;
+    text-align:center;
+    padding-top:80px;
+    box-sizing:border-box;
+    font-size: 20px;
+    border-radius: 5px;
+
+}
+.Ximg{
+    position: absolute;
+    top:10px;
+    right:10px;
+    background-image: url(./images/ui-icons_256x240.png) ;
+    background-position:-96px -128px;
+    width:17px;
+    height: 17px;
+}
+.hide{
+    position: absolute;
+    top: 124px;
+    left: 116px;
+    font-size: 12px
+}
+.prow{
+    letter-spacing:1px
+}
+.shuell{
+    color:#9e6111;
+    font-weight: 700;
+    margin-top:20px;
+    width: 80px;
+}
+#content {
+    margin: 0 auto;
+    width: 960px;
+    position:absolute;
+    left:50%;
+    top:0;
+    margin-left:-480px;
+    background: url(images/心愿墙.jpg) no-repeat center;
+    height: 627px;
+}
+
+#content .tip1{
+    position: absolute;
+    text-align: center;
+    width: 227px;
+    left: 200px;
+    top: 100px;
+}
+
+#content .tip1 .tip_h {
+    background: url(images/tip1_h.gif) no-repeat left top;
+}
+
+#content .tip1 .tip_h{
+    width: 227px;
+    padding-top: 45px;
+    height: 23px;
+    text-align: left;
+    cursor: move;
+}
+
+#content .tip1 .tip_c {
+    background: url(images/tip1_c.gif) repeat-y;
+}
+
+#content .tip1 .tip_c
+ {
+    width: 200px;
+    padding-left: 12px;
+    padding-right: 15px;
+    min-height: 40px;
+    text-align: left;
+    line-height: 20px;
+    max-height: 160px;
+    font:12px/12px 'Consolas, 'Courier New, 'monospace';
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+#content .tip1 .tip_f {
+    background: url(images/tip1_f.gif) no-repeat left top;
+}
+
+#content .tip1 .tip_f
+{
+    width: 227px;
+    height: 53px;
+    padding-top: 20px;
+}
+
+#content .close,
+#content .close2 {
+    float: left;
+    font-size: 12px;
+    cursor: pointer;
+    color: #000000;
+}
+.dtime{
+    position: absolute;
+    bottom: 56px;
+    left: 10px;
+    color:#9e6111;
+    font-weight: 700;
+}
+.clr {
+    clear: both;
+    overflow: auto;
+    display: block;
+    height: 0px;
+}
+
+#content .icon {
+    float: left;
+    width: 35px;
+    padding-left: 15px;
+    height: 35px;
+    text-align: center;
+}
+
+#content .name {
+    float: right;
+    padding-right: 15px;
+    text-align: right;
+    font-size: 14px;
+    line-height: 35px;
+    color: #C0F;
+}
+
+#content .num {
+    float: left;
+    padding-left: 7px;
+    width: 195px;
+}
+
+
+
+.box {
+    color:#b97b28;
+    font-size: 14px;
+    position: relative;
+    top:5px;
+    left:5px;
+    width: 200px;
+    height: 262px;
+    margin: 5px 5px;
+    top: 5px;
+}
+#btn{
+    position: absolute;
+    background-color:#ccc;
+    border-radius:10px;
+    width:90px;
+    height:24px;
+    outline:none;
+    border:none;
+}
+
+#jxy{
+    padding:10px;
+    width: 170px;
+    height: 242px;
+    border-radius: 5px;
+    background-color:#ccc;
+    display:none;
+    position:absolute;
+    left:0;
+    top:30px;
+}
+textarea{
+    resize:none;
+    width: 98%;
+    height: 50px;
+}
+
+#xytj{
+    position: absolute;
+    right:10px;
+    bottom:5px;
+    width: 90%;
+    background-color:#b97b28;
+    border-radius:10px;
+    height:24px;
+    outline:none;
+}
+.names{
+    width:100px;
+    height:24px;
+    font:'simsun';
+}
+.check{
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border:3px solid #be9c3d;
+    outline: none;
+    margin-right:10px;
+ }
+.check.clor{
+    background-color:rgb(197, 136, 45);
+}
+.time_x input{
+    margin-top:2px;
+    width:30px;
+    height:16px;
+    vertical-align: bottom;
+}
