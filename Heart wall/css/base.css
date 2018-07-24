@@ -1,0 +1,73 @@
+/*css初始化*/
+body, ul, h1, h2, h3, h4, h5, h6, input, dl, dd, form, p {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 14px/1.5 arial, "microsoft yahei";
+	background-color: #fff;
+	color: #000;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+img {
+	/*清除底部缝隙 图片和文字垂直对齐*/
+	vertical-align: middle;
+	/*清除ie6默认边框*/
+	border: 0 none;
+}
+input {
+	outline: none;  /*清除轮廓线*/
+	border: 0 none; /*清除默认边框*/
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+i, em {
+	font-style: normal;
+}
+.w {     /*版心*/
+	width: 1100px;
+	margin: 0 auto;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom :1;
+}
+.f12 {
+	font-size: 12px;
+}
+.f14 {
+	font-size: 14px;
+}
+.f16 {
+	font-size: 16px;
+}
+.f18 {
+	font-size: 18px;
+}
+.f20 {
+	font-size: 20px;
+}
+.red {
+	color: #c81623;
+}
+.tc {
+	text-align: center;
+}

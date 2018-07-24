@@ -1,3 +1,13 @@
+/*定义字体*/	
+.iconfont {
+	font-family: 'iconfont';
+	font-size: 28px;
+}
+/*版心*/
+/*.w {
+	margin: 0 auto;
+	width: 1200px;			
+}*/
 /* 头部开始 */
 .header{
     height: 44px;
@@ -8,11 +18,11 @@
     right: 0;
     left: 0;
     box-shadow: 0px 0px 2px 2px #666;
-    z-index:10;
+    z-index: 2;
 }
 .w1{
     width: 1200px;
-   margin: 0 auto;
+    margin: 0 auto;
 }
 .logo img{
     height: 44px;
@@ -69,9 +79,9 @@
     border:1px solid #ededed;
     width: 110px;
     text-align: center;
-   display: none;
-   box-shadow: 1px 2px 1px #efefef;
-   top: 50px;
+    display: none;
+    box-shadow: 1px 2px 1px #efefef;
+    top: 50px;
     left: -35px;
 }
 .area-choose li{
@@ -112,9 +122,108 @@
 
 /* 头部结束 */
 
+/*商品图片分类部分开始*/
+.goods-list-pic {
+	position: relative;
+ 	width: 1200px;
+  	height: 420px;
+  	overflow: hidden;
+  	margin-top: 130px;
+}
+.goods-list-pic li {
+ 	 width: 1200px;
+  	 height: 420px;			
+	 position: absolute;
+}
+/*商品图片分类部分结束*/
+/*商品分类部分开始*/
+.goods {
+	height: 50px;
+	padding: 24px 0;
+	margin-bottom: 10px;
+	text-align: center;
+	border-bottom: 1px solid #f2f2f2;
+}
+.goods img {
+	padding-top: 15px;
+}
+.goods-list li {
+	line-height: 28px;
+	font-size: 16px;
+}
+.goods-list .first {
+	font-weight: bold;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #7b9196;
+}
+.goods-list li a {
+	color: #767676;
+}
+.goods-list li a:hover {
+	color: #b0916a;
+}
+.goods-single li {
+	float: left;
+	margin-right: 10px;
+	width: 260px;
+	height: 364px;
+	text-align: center;
+}
+.goods-single li img {
+	width: 200px;
+}
+.goods-single ul .last {
+	margin-right: 0;
+}
+.goods-single ul li .sort {
+	margin-right: 0;
+	line-height: 22px;
+}
+.goods-single ul li .sort a {
+	color: #D5BFA7;
+}
+.goods-single ul li .buy {
+	height: 22px;
+	width: 120px;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 22px;
+	display: inline-block;
+	background-color: #d1ab80;
+}
+.goods-single ul li .buy i {
+	display: inline-block;
+}
+.goods-single ul li .buy:hover {
+	color: #fff;
+}
+.goods-single li a {
+	color: #684029;
+}
+.goods-single li a p {
+	color: #BB9772;
+}
+.goods-single li h3 {
+	color: #684029;
+	font-size: 16px;
+	line-height: 36px;
+}
+.goods-single li h3:hover {
+	color: #BB9772;
+}
+.goods-single ul li img {
+	transition: all 0.5s;
+}
+.goods-single ul li img:hover {
+
+    transform:scale(1.05);
+    /*transition: transform 0.5s;*/
+ }
+/*商品分类部分结束*/
 /* 腿部开始 */
 .footer {
-
+    height: 330px;
+    margin-top: 90px; /*这个为底部的上外边距  防止底部顶上去*/
     text-align: center;
     background-color: #333333;
     padding-top: 50px;
@@ -186,11 +295,6 @@
 }
 .footer p {
     color: #999;
-    font-size: 14px;
-}
-.footer a {
-
-    font-size: 14px;
 }
 .footer .msa {
     border-top: 1px solid #616161;;
@@ -200,7 +304,3 @@
     margin: 0 auto;
     width: 810px;
 }
-
-
-
-

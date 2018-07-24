@@ -1,0 +1,264 @@
+.small img {
+	border: 1px solid #c6b098;
+	margin-bottom: 3px;
+}
+.small ul {
+	margin-top: 150px;
+}
+.pic{
+	position: relative;
+	height: 480px;
+}
+.big {
+	position: absolute;
+	left: 110px;
+	top: 0px;
+}
+.fdj {
+	position: absolute;
+	width: 320px;
+	height: 320px;
+	left: 600px;
+	top: 0px;
+	display: none;
+	overflow: hidden;
+	z-index: 1;
+}
+.fdj img {
+	position: absolute;
+}
+.mask {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 160px;
+	height: 160px;
+	border: 1px solid rgb(207, 206, 204);
+	/*z-index: 2;
+	overflow: hidden;*/
+	background-color: rgb(255,0,0,0.3);
+	display: none;
+}
+.txt {
+	position: absolute;
+	left: 620px;
+	top: 0px;
+}
+.txt h3 {
+	font-size: 22px;
+	color: #767676;
+	width: 490px;
+	height: 44px;
+	line-height: 44px;
+	border-bottom: 1px solid #d6d6d6;
+	margin-bottom: 30px;
+}
+.txt h3 span {
+	font-size: 14px;
+	position: relative;
+	left: 10px;
+}
+.txt h2 {
+	font-size: 30px;
+	font-family: '微软雅黑';
+	height: 70px;
+}
+.txt h2 span {
+	font-size: 22px;
+}
+.cake-size span {
+	display: inline-block;
+	width: 40px;
+	height: 25px;
+	background-color: #F2F6F7;
+	text-align: center;
+	line-height: 25px;
+	color: #666;
+	margin-right: 8px;
+	cursor: pointer;
+}
+.cake-size .active {
+	background: url(../images/ok2.png) no-repeat;
+}
+.pc-size {
+	margin-top: 15px;
+	color: #bbb;
+}
+.bere {
+	color: #bbb;
+}
+.amount {
+	margin-top: 20px;
+}
+.amount .reduce, .amount .plus {
+	display: inline-block;
+	width: 35px;
+	height: 22px;
+	border: 1px solid #B0916A;
+	color: #B0916A;
+	background-color: #f2f6f7;
+	line-height: 22px;
+	font-size: 22px;
+	cursor: pointer;
+}
+.amount .quantity {
+	position: relative;
+	color: #666;
+	top: -2px;
+	margin-right: 5px;
+}
+.amount .many {
+	position: relative;
+	top: -2px;
+	/*margin: 0px 10px;*/
+	width: 26px;
+	height: 20px;
+}
+.carbtn {
+	margin-top: 25px;
+}
+.carbtn span {
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	background-color: #b0916a;
+	font-size: 14px;
+	border-radius: 2px;
+}
+.feel {
+	margin-top: 30px;
+}
+.feel p {
+	height: 30px;
+	color: #666;
+	font-size: 14px;
+}
+.feel span {
+	color: #B1936B;
+	font-weight: 700;
+}
+.del-title {
+	width: 1200px;
+	height: 40px;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	margin-top: 100px;
+	line-height: 40px;
+	color: #666;
+}
+.del-title span {
+	font-size: 16px;
+	font-style: "微软雅黑";
+	padding-left: 15px;
+}
+.del-title i {
+	color: #FF4400;
+	font-weight: 700;
+}
+.detil {
+	display:none;
+	margin-top: -200px;
+}
+.main-recomend {
+	width: 400px;
+	margin: 200px auto;
+}
+.main-recomend img {
+	position: relative;
+	left: -100px;
+	top: 100px;
+}
+.line-one {
+	width: 350px;
+	border-top: 1px solid #d6d6d6;
+}
+.line-two {
+	width: 450px;
+	border-top: 1px solid #d6d6d6;
+}
+.line-one, .line-two {
+	margin-top: 150px;
+}
+.center-image {
+	position: relative;
+	top: -100px;
+}
+.evalute {
+	display: block;
+}
+.evalute i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+.evalute .best {
+	background: url(../images/jlt.png) 0px -100px;
+}
+.evalute .good {
+	background: url(../images/jlt.png) 0px -50px;
+}
+.evalute .bad {
+	background: url(../images/jlt.png) 0px 0px;
+}
+.flpj {
+	margin-top: 20px;
+	padding-left: 100px;
+}
+.flpj div {
+	display: inline-block;
+	margin-right: 50px;
+}
+.trends {
+	position: relative;
+	width: 600px;
+	height: 100px;
+	border: 1px solid #eee;
+	padding-left: 250px;
+	margin-top: 30px;
+}
+.trends dl {
+	color: #333;
+}
+.trends dt {
+	position: absolute;
+	left: 100px;
+	top: 20px;
+	width: 130px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	background-color: #f3f3f3;
+	font-size: 16px;
+	color: #999;
+	font-weight: 700;
+}
+.trends i {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background-image: url(../images/hp.png);
+	margin-left: 3px;
+}
+.trends dd {
+	height: 30px;
+}
+.trends dd span {
+	margin-left: 10px;
+	color: #ff6600;
+	font-size: 14px;
+	font-weight: 700;
+}
+.display-value {
+	padding-left: 100px;
+	margin-bottom: 80px;
+}
+
+.display-value div {
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 14px;
+	color: #000;
+}

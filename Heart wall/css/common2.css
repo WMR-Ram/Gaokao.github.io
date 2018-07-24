@@ -1,0 +1,66 @@
+	body,ul,input,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,form{
+		margin: 0;
+		padding: 0;
+	}
+	body { 
+		font: 14px arial, "microsoft yahei";
+		/*background-color: #dbdad8;*/
+	}
+    li {
+    	list-style: none
+    }
+    a{
+    	text-decoration: none;
+    }
+
+    /*记*/
+    img {
+	/*清除底部缝隙 图片和文字垂直对齐*/
+	vertical-align: middle;
+	/*清除ie6默认边框*/
+	border: 0 none;
+    }
+    img {
+    	vertical-align: middle;
+    	border: 0 none;
+    }
+    input {
+    	outline: none;
+    	border: 0 none;
+    }
+    h1,h2,h3,h4,h5,h6 {
+    	font-weight: 400;
+    }
+    .w {     /*版心*/
+	width: 1200px;
+	margin: 0 auto;
+    }
+    .fl {
+	float: left;
+	}
+	.fr {
+		float: right;
+	}
+	.clearfix:before, .clearfix:after {
+		content: "";
+		display: table;
+	}
+	.clearfix:after {
+		clear: both;
+	}
+	.clearfix {
+		*zoom :1;
+	}
+    .tc {
+    	text-align: center;
+    }
+  .f12 {
+   	font-size: 12px;
+   } 
+   .f16 {
+   	font-size: 16px;
+   	color: #ccc;
+   }
+   .f24 {
+   	font-size: 24px;
+   }

@@ -1,0 +1,88 @@
+.bgdiv{
+    /* width: 1920px; */
+    height: 528px;
+    }
+    .bs{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+#pro{
+    margin-top: 90px;
+}
+.pro-pos{
+    position: relative;
+}
+
+.box-pos{
+    position: absolute;
+
+    padding-top: 50px;
+}
+.box-1{
+    top: 80px;
+    right: 360px;
+}
+.box-2{
+    left: 240px;
+    top: 84px;
+}
+.box-3 {
+    left: 220px;
+    top: 120px;
+}
+.box-4{
+    top: 60px;
+    right: 262px;
+}
+.box-5{
+    top: 50px;
+    right: 300px;
+}
+.box-6{
+    top: 80px;
+    left:45%;
+}
+.box-7{
+    top: 120px;
+    left: 260px;
+}
+.box-8{
+    top: 84px;
+    left: 45%;
+}
+.box-9{
+    top: 84px;
+    left: 45%;
+}
+.box-10{
+    top: 120px;
+    left: 400px;
+}
+h3{
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    width: 116px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #d1d1d1;
+    text-align: center;
+    margin: 0 auto;
+}
+#pro p {
+    text-align: center;
+    padding-top: 20px;
+}
+.btn-d{
+    padding-top: 18px;
+}
+.aicon{
+    background: url(../images/xd-btn.png) no-repeat center top;
+    width: 19px;
+    height: 19px;
+    line-height: 15px;
+    border-radius: 1000px;
+    font-size: 30px;
+    position: relative;
+    margin: 0 auto;
+}

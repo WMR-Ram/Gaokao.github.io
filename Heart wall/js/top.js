@@ -30,8 +30,9 @@ $(function () {
     //          $('.area-choose span').text($(this).children().text());
     //     })
     // })
-    var location=$('.area-choose span'),lis=$('.area-choose li');
-    $('.area-choose ul').on('click','li',function(){
+    var location = $('.area-choose span'),
+        lis = $('.area-choose li');
+    $('.area-choose ul').on('click', 'li', function () {
         location.text($(this).children().text());
     })
 })
