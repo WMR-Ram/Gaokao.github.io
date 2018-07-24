@@ -1,0 +1,202 @@
+/* 头部开始 */
+.header{
+    height: 44px;
+    padding:18px 0;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0px 0px 2px 2px #666;
+}
+.w1{
+    width: 1200px;
+   margin: 0 auto;
+}
+.logo img{
+    height: 44px;
+    margin-right: 45px;
+}
+.nav li{
+    float: left;
+}
+.header a{
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    color:#805e4b;
+    font-size: 14px;
+}
+.nav a{
+    margin-right: 35px;
+}
+.nav a:hover{
+    color:#bb9772;
+}
+.lead>li{
+    float: left; 
+}
+.first{
+    position: relative;
+    margin-right: 35px;;
+}
+.first img{
+    display: none;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:55px;
+    left: -15px;
+    z-index: 1000;
+}
+.area-choose{
+   padding-top: 12px; 
+   padding-right: 30px;
+   position: relative
+}
+.area-choose img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.area-choose>ul{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    border:1px solid #ededed;
+    width: 110px;
+    text-align: center;
+   display: none;
+   box-shadow: 1px 2px 1px #efefef;
+   top: 50px;
+    left: -35px;
+}
+.area-choose li{
+   /* height: 15px;
+    width: 10px; */
+    text-align: center;
+}
+.area-choose a {
+   color:#d5bfaf;
+}
+.area-choose a:hover {
+    color:#805e4b;
+ }
+.area-choose i{
+    background: url(../images/icon.png) no-repeat 0px -103px ;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+}
+.area-choose span{
+    color:#805e4b;
+    cursor: pointer;
+}
+.lead>li:nth-child(3){
+    padding-right: 22px;
+}
+.lead>li:last-child{
+    padding-top: 7px;
+    margin-left: 20px;
+}
+.shop-car {
+    display: inline-block;
+    background: url(../images/icon.png) no-repeat -191px -94px;
+    background-size: 310px 120px;
+    width: 32px;
+    height: 37px;
+}
+
+/* 头部结束 */
+
+/* 腿部开始 */
+.footer {
+    height: 330px;
+    margin-top: 90px; /*这个为底部的上外边距  防止底部顶上去*/
+    text-align: center;
+    background-color: #333333;
+    padding-top: 50px;
+}
+.footer > img {
+    width: 96px;
+    height: 40px;
+}
+.footer ul li a {
+    color: #fff;
+}
+.footer ul li {
+    float: left;
+    margin-right: 54px;
+    margin-top: 28px;
+}
+.footer-nav {
+    margin: 0 auto;
+    width: 810px;
+}
+.footer .tuiguang {
+    margin: 0 auto;
+    width: 330px;
+}
+.footer .tuiguang .weibo, .wechat, .app {
+    width: 50px;
+    line-height: 50px;
+    height: 50px;
+    float: left;
+    margin-top: 25px;
+    margin-right: 60px;
+    border-radius: 50%;
+    background-color: #494949;
+}
+.footer .tuiguang a img {
+    width: 32px;
+    height: 28px;
+}
+.footer .tuiguang .app a {
+    color: #fff;
+    font-size: 16px;
+}
+.footer .tuiguang .weobo {
+    position: absolute;
+}
+.footer .tuiguang .we img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -24px;
+    display: none;
+}
+.footer .tuiguang .wx img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -24px;
+    display: none;
+}
+.footer .tuiguang .app #pic-app {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -24px;
+    display: none;
+}
+.footer .first-p {
+    margin-top: 20px;
+}
+.footer p {
+    color: #999;
+}
+.footer .msa {
+    border-top: 1px solid #616161;;
+    padding-top: 8px;
+}
+.footer-nav {
+    margin: 0 auto;
+    width: 810px;
+}
+
+
+
+
