@@ -24,6 +24,25 @@ body {
     background: url(../images/72_thumb.jpg) no-repeat center;
     background-color: #f6f5f1;
 }
+
+#bodyPage {
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+img.bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    display: none;
+}
+
 .mask{
     position: absolute;
     top:0;
@@ -193,7 +212,7 @@ body {
 #btn{
     position: fixed;
     top: 100px;
-    background-color:#ccc;
+    background-color:#c49346;
     border-radius:10px;
     width:90px;
     height:24px;
@@ -206,7 +225,7 @@ body {
     width: 170px;
     height: 242px;
     border-radius: 5px;
-    background-color:#ccc;
+    /* background-color:#ccc; */
     display:none;
     position:absolute;
     left:0;

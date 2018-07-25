@@ -21,6 +21,7 @@ $(function () {
     var mIndex = 3;
     // ------------------------------------------------------
     cjfun(data);
+    
     // 添加心愿按钮
     $('#btn').click(function () {
         if ($(this).html() === '添加心愿') {
@@ -48,9 +49,9 @@ $(function () {
 
         // 判断是否需要保密心愿
         if ($(this).attr('tada-n') === 'y' && $(this).attr('class') === 'check clor') {
+            
+            // $('body').css();//浮层出现时窗口不能滚动设置
             $('html').css('overflow','hidden')
-                // $('body').css();//浮层出现时窗口不能滚动设置
-                // 
             
             // 设置保密密码；
             $('.mask').show().css({
@@ -137,16 +138,21 @@ $(function () {
             var priv = $('.privary .clor').attr('tada-n');
             var name = $('.names').val();
             var arr = [];
-            var json = {};
+            
             var bmxysz = [];
             if (priv === 'y') {
+                var json = {'id': data.length + 1};
+                var mjson = {};
                 bmxysz[bmxysz.length] = {
+                    'id': data.length + 1,
                     'xysj': fn(),
                     'xy': text,
                     'xb': sex,
                     'jssj': endx
                 };
+                
             } else {
+                var json = {};
                 json = {
                     'id': data.length + 1,
                     'xysj': fn(),
