@@ -159,6 +159,18 @@ img.bg {
     cursor: pointer;
     color: #000000;
 }
+
+/* 给保密心愿加心愿锁图片 */
+.lock{
+    position: absolute;
+    top: 56px;
+    left: 60px;
+    width: 100px;
+    height: 100px;
+    background: url(../images/timg.png) center center;
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
 .dtime{
     position: absolute;
     bottom: 56px;
@@ -195,8 +207,28 @@ img.bg {
     padding-left: 7px;
     width: 195px;
 }
-
-
+.sosu{
+    width:22px;
+    height: 30px;
+    border-radius: 15px;
+    /* background-color:none; */
+    border:1px solid #9e6111;
+    position: fixed;
+    top:100px;
+    right:104px;
+    z-index: 2;
+    padding:0 32px 0 12px;
+    box-sizing:border-box; 
+    /* 让输入框变为透明 */
+    background-color:transparent;
+}
+#bzd{
+    position: fixed;
+    top:100px;
+    right:110px;
+    cursor: pointer;
+    z-index: 3;
+}
 
 .box {
     color:#b97b28;
