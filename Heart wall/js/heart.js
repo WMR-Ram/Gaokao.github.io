@@ -18,7 +18,17 @@ $(function () {
     var $tip1 = $('.tip1');
     var $cont = $('#content');
     var ZIndex = 1;
+    var $mm = $('.title > #prow');
     
+    // 保密数组
+    var bmxysz = [];
+
+    // 密码和保密数组的对应关系对象
+    var mjson = {};
+    
+    // 密码
+    var prow = '';
+
     // 这是输入密码时遮罩层的初始层级
     var mIndex = 3;
     var $so = $('.sosu');
@@ -49,64 +59,103 @@ $(function () {
     });
 
     // 设置是否保密类名切换
-    $('.privary>input').click(function (e) {
+    $('.privary>input').click(function () {
 
         $(this).stop().toggleClass("clor").siblings().removeClass('clor');
 
         // 判断是否需要保密心愿
         if ($(this).attr('tada-n') === 'y' && $(this).attr('class') === 'check clor') {
-            
-            // $('body').css();//浮层出现时窗口不能滚动设置
-            $('html').css('overflow','hidden')
-            
-            // 设置保密密码；
-            $('.mask').show().css({
-                    'zIndex': mIndex,
-                    height: $('#content')[0].offsetHeight+300,
-            })
-                
-            //输入密码时的逻辑 
-            .find('.prow').keyup(function () {
-                var str = $('.prow').val();
-                if (str === ' ') {
-                    alert('密码不能是空格');
-                    $('.prow').val('');
-                    return;
-                }
+            fsose(false);
+        }
+    });
 
-                //是不是用$.each循环更好？？？？？ 
-                for (k in str) {
-                    $('.hide').text(str.charAt(str.length - 1));
+    // ------------------------------------------------
+    function fsose(sf){
+        $mm.val('');
+        
+        // $('body').css();//浮层出现时窗口不能滚动设置
+        $('html').css('overflow','hidden')
+            
+        // 设置保密密码；
+        $('.mask').show().css({
+                'zIndex': mIndex,
+                height: $('#content')[0].offsetHeight+300,
+        })
+            
+        //输入密码时的逻辑 
+        .find('.prow').keyup(function () {
+            var str = $('.prow').val();
+            if (str === ' ') {
+                alert('密码不能是空格');
+                $('.prow').val('');
+                return;
+            }
+
+            //是不是用$.each循环更好？？？？？ 
+            for (k in str) {
+                $('.hide').text(str.charAt(str.length - 1));
+                break;
+            }
+
+        //输入密码时定时器调用函数校对密码 
+
+        clearTimeout(hidTimer);
+        var hidTimer = setTimeout(hidspan, 150);
+        }).parent('.title').children('.Ximg').click(function () {
+            $mm.val('');
+            $('.mask').hide();
+            $('.privary').children('input').removeClass('clor');
+            $('html').css('overflow','auto');
+        }).parent('.title').children('.shuell').click(function () {
+
+            // 如果sf为true时执行搜索功能，否则执行赋值功能
+            if(sf){
+                $('.mask').hide();
+                var json = bmxysz[mjson[$mm.val()]];
+                var id = json.id;
+                var $remov = $('#content').children('.tip1');
+                $remov.each(function(i,ele){
+                    if($(ele).attr('data-c') == id){
+                        $(ele).remove();
+                    }
+                })
+                for(k in json){
+                    if(json.bm === 'y'){
+                        var s = json.jssj;
+                        json.bm = 'n';
+                    }
                     break;
                 }
 
-            //定时器调用函数校对密码 
-            var hidTimer = setTimeout(hidspan, 150);
-            }).parent('.title').children('.Ximg').click(function () {
-                $('.mask').hide();
-                $('.privary').children('input').removeClass('clor');
-                $('html').css('overflow','auto');
-            }).parent('.title').children('.shuell').click(function () {
-                $('.mask').hide();
+                // 参数 1、要创建心愿卡的数据 
+                // 参数 2、是否保密bool值 
+                // 参数 3、倒计时毫秒值
+                heartk(json , false , s);
 
                 // 回复页面的滚动效果
                 $('html').css('overflow','auto');
-            });
-        // ------------------------------------
-            
-            // 动态显示密码 1秒隐藏
-            function hidspan() {
-                var str = $('.prow').val();
-                var sttr = $('.hide');
-                sttr.text('')
-                .css({
-                    position: 'absolute',
-                    left: 115 + 5.7 * str.length,
-                    top: 124,
-                });
+            }else{
+                $('.mask').hide();
+                prow = $mm.val();
+                // 回复页面的滚动效果
+                $('html').css('overflow','auto');
             }
+            
+        });
+        // ------------------------------------
+        
+        // 动态显示密码 1秒隐藏
+        function hidspan() {
+            var str = $('.prow').val();
+            var sttr = $('.hide');
+            sttr.text('')
+            .css({
+                position: 'absolute',
+                left: 115 + 5.7 * str.length,
+                top: 124,
+            });
         }
-    });
+    }
     // -------------------------------------------------------
 
     // 点击许愿按钮时执行的代码
@@ -116,7 +165,8 @@ $(function () {
         var sxsjm = $('#month').val();
         var sxsjd = $('#day').val();
         var text = $('#text1').val();
-
+        //------------------------------
+        
         //结束的时间：年，月，日，分，秒（月的索引是0~11）
         //当内容为空时获取的是一个-1个月的值
         sxsjm = +sxsjm == 0 ? 0 : +sxsjm - 1;
@@ -149,17 +199,10 @@ $(function () {
             var priv = $('.privary .clor').attr('tada-n');
             var name = $('.names').val();
             var arr = [];
-            var prow = $('.title > #prow').val();
-           
-            // 验证密码
-            var yaz  = $('').val();
-
-            var bmxysz = [];
             var json = {};
             number++;
             if (priv === 'y') {
                 json  = {'id': number, 'bm':priv, 'name':name};
-                var mjson = {};
                 bmxysz[bmxysz.length] = {
                     'id': number,
                     'bm':priv,
@@ -168,7 +211,7 @@ $(function () {
                     'name': name,
                     'jssj': endx
                 };
-                mjson[prow] = bmxysz.length;
+                mjson[prow] = bmxysz.length-1;
             } else {
                 var json = {};
                 json = {
@@ -182,14 +225,33 @@ $(function () {
             }
             data[data.length] = json;
             arr[arr.length] = json;
-            console.log(data);
             cjfun(arr,str);
+
         }else{
             alert('请输入心愿内容！');
         }
         
+        // 清空心愿卡上的数据
+        $('.privary').children('input').removeClass('clor');
+        $('.names').val('');
+        $mm.val('');
+        $('#year').val('');
+        $('#month').val('');
+        $('#day').val('');
+        $('#text1').val(''); 
+
+        // 隐藏模板
         $tip1.hide();
     });
+    // ----------------------------------------
+    
+    // 保密心愿被点击是执行的代码
+    $('span').on('dblclick',function(){
+        if($(this).attr('class') === 'lock'){
+            fsose(true);
+        }
+    });
+
     // ----------------------------------------
     
     // 鼠标移入放大镜搜索框动态增长 自动获取光标
@@ -220,10 +282,11 @@ $(function () {
 
     // 根据data数组里的每一项创建心愿卡
     function cjfun(arr,tr){
+
+        // 开闭原则bool赋值给元素加类名
+        var bool = false; 
         tr = tr > 0 ? tr : 0;
-        //结束时间的毫秒值在data数组中获取的
-        $.each(arr, function (i, ele) {
-                 
+        $.each(arr,function(i,ele){
             if(ele.id > tr){
                 var ends = ele.jssj;
 
@@ -232,58 +295,66 @@ $(function () {
                     ele.xysj = '';
                 }
                 if(ele.bm === 'y'){
-                    ele.xy = '<span class="lock"></span>';
+                    ele.xy = '';
+                    bool = true;
                     ends = fn();
                 }
-                $tip1.clone(true).insertBefore($tip1)
-                    .find('.num').html('第[' + ele.id + ']条' + ele.xysj)
-                    .parents('.tip1').find('.tip_c').html(ele.xy)
-                    .parents('.tip1').find('.name').text(ele.name)
-                    .parents('.tip1').css({
-                        left: $tip1[0].offsetLeft + Math.random() * ($cont[0].offsetWidth -
-                            $tip1[0].offsetWidth - $tip1[0].offsetLeft),
-                        top: Math.random() * 400
-                    }).show().attr('data-c',ele.id)
-        
-                    // on()：jquery事件监听器
-                    .parents('#content').on('mousedown', '.tip1', function (e) {
-                        e = e || document.event;
-                        $(this).css('zIndex', ZIndex);
-        
-                        // mIndex设置遮罩层的层级
-                        mIndex = 2 + ZIndex++;
-                        var x = e.clientX - this.offsetLeft;
-                        var y = e.clientY - this.offsetTop;
-                        $(this).bind('mousemove', function (e) {
-                            e = e || document.event;
-                            var xx = e.clientX - x;
-                            var yy = e.clientY - y;
-                            var num = content.offsetWidth - this.offsetWidth;
-                            xx = xx > 0 ? xx : 0;
-                            xx = xx < num + 5 ? xx : num + 5;
-                            yy = yy > 0 ? yy : 0;
-                            yy = yy < content.offsetHeight - this.offsetHeight ?
-                                yy : content.offsetHeight - this.offsetHeight;
-                            $(this).css({
-                                left: xx,
-                                top: yy
-                            });
-                            return false;
-                        })
-                        .bind('mouseup', function () {
-                            $(this).unbind('mousemove');
-                            return false;
-                        })
-                    });
-                ffsl(ends,ele.id);
-            }else{
-                return;
+                heartk(ele , bool , ends);
             }
-        });
+        })
+    }
+    // 创建心愿卡----------------------------------------
+
+    // 参数 1、要创建心愿卡的数据 
+    // 参数 2、是否保密bool值 
+    // 参数 3、倒计时毫秒值
+    function heartk(ele , bool , ends){
+        $tip1.clone(true).insertBefore($tip1)
+            .find('.num').html('第[' + ele.id + ']条' + ele.xysj)
+            .parents('.tip1').find('.tip_c').children('span')
+            .attr('class',bool == true?'lock':'ddd').html(ele.xy)
+            .parents('.tip1').find('.name').text(ele.name)
+            .parents('.tip1').css({
+                left: $tip1[0].offsetLeft + Math.random() * ($cont[0].offsetWidth -
+                    $tip1[0].offsetWidth - $tip1[0].offsetLeft),
+                top: Math.random() * 400
+            }).show().attr('data-c',ele.id)
+
+            // on()：jquery事件监听器
+            .parents('#content').on('mousedown', '.tip1', function (e) {
+                e = e || document.event;
+                $(this).css('zIndex', ZIndex);
+
+                // mIndex设置遮罩层的层级
+                mIndex = 2 + ZIndex++;
+                var x = e.clientX - this.offsetLeft;
+                var y = e.clientY - this.offsetTop;
+                $(this).bind('mousemove', function (e) {
+                    e = e || document.event;
+                    var xx = e.clientX - x;
+                    var yy = e.clientY - y;
+                    var num = content.offsetWidth - this.offsetWidth;
+                    xx = xx > 0 ? xx : 0;
+                    xx = xx < num + 5 ? xx : num + 5;
+                    yy = yy > 0 ? yy : 0;
+                    yy = yy < content.offsetHeight - this.offsetHeight ?
+                        yy : content.offsetHeight - this.offsetHeight;
+                    $(this).css({
+                        left: xx,
+                        top: yy
+                    });
+                    return false;
+                })
+                .bind('mouseup', function () {
+                    $(this).unbind('mousemove');
+                    return false;
+                });
+            });
+        ffsl(ends,ele.id);
     }
     //删除心愿------------------------------------------- 
     
-    var jjjj = $cont.children();
+    var jjjj = $cont.find('.tip_h');
     for(var i=0;i<jjjj.length;i++){
         $(jjjj).eq(i).on('dblclick',function () {
             var str = $(this).find('.num').html();
@@ -297,7 +368,7 @@ $(function () {
                     cjfun(data,str1);
                 }
             }
-            this.remove();
+            $(this).parent().remove();
         });
     }
     // 心愿定时器启动------------------------------------
@@ -306,19 +377,14 @@ $(function () {
         var $str = $('#content').children('.tip1');
         $str.each(function(i,ele){
             var data_c = ele.getAttribute('data-c');
-
             if(+data_c === id){
-                // console.log($(ele).find('.dtime'));
                 clearInterval(ele.timer);
                 ele.timer = setInterval(function () {
                     $(ele).find('.dtime').html(fndjs(end));
                 }, 1000);
             }
         })
-       
-        // return 
     }
-    
     //封装倒计时算法---------------------------------------
   
     function fndjs(n) {
