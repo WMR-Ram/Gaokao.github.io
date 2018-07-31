@@ -277,7 +277,6 @@ $(function () {
     .mouseleave(function(){
         $so.stop().animate({width:22},800);
     });
-
     // ----------------------------------------
 
     // 根据data数组里的每一项创建心愿卡
