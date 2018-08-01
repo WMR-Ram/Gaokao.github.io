@@ -9,7 +9,7 @@ $(function () {
 
 
     var data = [
-        {id:1, 'bm':'n', xysj: "2018-7-19 22:27:2",   xy: "希望明天捡十块钱！",   name:"见钱眼开",    jssj:1533105211082},
+        {id:1, 'bm':'n', xysj: "2018-7-19 22:27:2",   xy: "希望明天捡十块钱！",   name:"见钱眼开",    jssj:1553105211082},
         {id:2, 'bm':'n', xysj: "2018-7-19 22:29:5",   xy: "希望明天死情敌！",     name:"死了都要爱",  jssj:1533511211082},
         {id:3, 'bm':'n', xysj: "2016-02-17 01:01:01", xy: "今天你拿苹果支付了么", name: "mahu",       jssj:1533155211082},
         {id:4, 'bm':'n', xysj: "2018-7-20 20:42:25",  xy: "希望能找到工作",       name: "梦游西天",   jssj:1543103211082},
@@ -35,6 +35,9 @@ $(function () {
     
     // 创建新信息时用的id；因为data中用5条数据
     var number =  5;
+
+    // 删除元素之前先克隆一份放在这个数组里等回复时用
+    var kl = [];
     // ------------------------------------------------------
     cjfun(data);
     
@@ -90,8 +93,6 @@ $(function () {
                 $('.prow').val('');
                 return;
             }
-
-            //是不是用$.each循环更好？？？？？ 
             for (k in str) {
                 $('.hide').text(str.charAt(str.length - 1));
                 break;
@@ -108,35 +109,40 @@ $(function () {
             $('html').css('overflow','auto');
         }).parent('.title').children('.shuell').click(function () {
 
-            // 如果sf为true时执行搜索功能，否则执行赋值功能
+            // 当保密心愿展开时 如果sf为true时执行搜索功能，否则执行赋值功能
             if(sf){
+                sf = false;
                 $('.mask').hide();
                 var json = bmxysz[mjson[$mm.val()]];
+                if(mjson[$mm.val()] === undefined){
+                    alert('您输入的密码不正确！');
+                    return;
+                }
                 var id = json.id;
                 var $remov = $('#content').children('.tip1');
-                $remov.each(function(i,ele){
+                $.each($remov,function(i,ele){
                     if($(ele).attr('data-c') == id){
+                        kl[kl.length] = $(ele).clone(true);
                         $(ele).remove();
+                        return false;
                     }
-                })
-                for(k in json){
-                    if(json.bm === 'y'){
-                        var s = json.jssj;
-                        json.bm = 'n';
-                    }
-                    break;
+                });
+                if(json.bm === 'y'){
+                    var $sj = json.jssj;
+                    json.bm = 'n';
+                
+                    // 把保密心愿以普通心愿的形式展现出来
+                    // 参数 1、要创建心愿卡的数据 
+                    // 参数 2、是否保密bool值 根据他来确定是否添加红心锁图片
+                    // 参数 3、倒计时毫秒值                    
+                    // 回复页面的滚动效果
+                    $('html').css('overflow','auto');
+                    heartk(json,false,$sj);
                 }
-
-                // 参数 1、要创建心愿卡的数据 
-                // 参数 2、是否保密bool值 
-                // 参数 3、倒计时毫秒值
-                heartk(json , false , s);
-
-                // 回复页面的滚动效果
-                $('html').css('overflow','auto');
             }else{
                 $('.mask').hide();
                 prow = $mm.val();
+                
                 // 回复页面的滚动效果
                 $('html').css('overflow','auto');
             }
@@ -213,7 +219,7 @@ $(function () {
                 };
                 mjson[prow] = bmxysz.length-1;
             } else {
-                var json = {};
+                json = {};
                 json = {
                     'id': number,
                     'bm':priv,
@@ -253,7 +259,26 @@ $(function () {
     });
 
     // ----------------------------------------
-    
+
+    // 关闭保密心愿信息时让心愿卡继续保密展示
+    function sc(qq){
+        if(bmxysz.length === 0){
+
+            // 将删除的数据重新添加到保密数组
+            bmxysz[bmxysz.length] = qq;
+        }else{
+            bmxysz[bmxysz.length] = qq;
+            px(bmxysz);
+        }
+        var co = {'id': qq.id, 'bm':qq.bm, 'name':qq.name};
+        px(data);
+        function px(paixu){
+            paixu.sort(function fun(a,b){
+                return a.id-b.id;
+            });
+        }
+        dd(co);
+    }
     // 鼠标移入放大镜搜索框动态增长 自动获取光标
     $('#bzd').mouseenter(function(){
         $so.stop().animate({width:208},800)
@@ -281,26 +306,29 @@ $(function () {
 
     // 根据data数组里的每一项创建心愿卡
     function cjfun(arr,tr){
-
-        // 开闭原则bool赋值给元素加类名
-        var bool = false; 
         tr = tr > 0 ? tr : 0;
         $.each(arr,function(i,ele){
             if(ele.id > tr){
-                var ends = ele.jssj;
-
-                //判断许愿时间是否为空 
-                if(ele.xysj === undefined){
-                    ele.xysj = '';
-                }
-                if(ele.bm === 'y'){
-                    ele.xy = '';
-                    bool = true;
-                    ends = fn();
-                }
-                heartk(ele , bool , ends);
+                dd(ele);
             }
-        })
+        });
+    }
+    function dd(ff){
+
+         // 开闭原则bool赋值给元素加类名
+        var bool = false;
+        var ends = ff.jssj;
+
+        //判断许愿时间是否为空 
+        if(ff.xysj === undefined){
+            ff.xysj = '';
+        }
+        if(ff.bm === 'y'){
+            ff.xy = '';
+            bool = true;
+            ends = fn();
+        }
+        heartk(ff , bool , ends);
     }
     // 创建心愿卡----------------------------------------
 
@@ -367,12 +395,37 @@ $(function () {
                     cjfun(data,str1);
                 }
             }
+            $.each(bmxysz,function(i,ele){
+                if(ele.id === +str){
+                    var kk = bmxysz.splice(0,1);
+                    if(ele.bm == 'n'){
+                        ele.bm = 'y';
+                        sc(kk[0]);
+                    }
+                    // console.log(kk[0]);
+                    // console.log(bmxysz[0]);
+                }
+            })
+
+            // for(k in bmxysz){
+            //     if(bmxysz[k].id === +str){
+            //         console.log(bmxysz);
+            //         var kk = bmxysz.splice(k,1);
+            //         if(kk[0].bm == 'n'){
+            //             kk[0].bm = 'y';
+            //             sc(kk);
+            //         }
+            //     }
+            // }
             $(this).parent().remove();
+            
+            
         });
     }
     // 心愿定时器启动------------------------------------
     
     function ffsl(end,id){
+        console.log(111);
         var $str = $('#content').children('.tip1');
         $str.each(function(i,ele){
             var data_c = ele.getAttribute('data-c');
@@ -382,7 +435,7 @@ $(function () {
                     $(ele).find('.dtime').html(fndjs(end));
                 }, 1000);
             }
-        })
+        });
     }
     //封装倒计时算法---------------------------------------
   
