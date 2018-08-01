@@ -382,8 +382,7 @@ $(function () {
     //删除心愿------------------------------------------- 
     
     var jjjj = $cont.find('.tip_h');
-    for(var i=0;i<jjjj.length;i++){
-        $(jjjj).eq(i).on('dblclick',function () {
+        $(jjjj).on('dblclick',function () {
             var str = $(this).find('.num').html();
 
             // 截取字符串
@@ -402,26 +401,10 @@ $(function () {
                         ele.bm = 'y';
                         sc(kk[0]);
                     }
-                    // console.log(kk[0]);
-                    // console.log(bmxysz[0]);
                 }
             })
-
-            // for(k in bmxysz){
-            //     if(bmxysz[k].id === +str){
-            //         console.log(bmxysz);
-            //         var kk = bmxysz.splice(k,1);
-            //         if(kk[0].bm == 'n'){
-            //             kk[0].bm = 'y';
-            //             sc(kk);
-            //         }
-            //     }
-            // }
             $(this).parent().remove();
-            
-            
         });
-    }
     // 心愿定时器启动------------------------------------
     
     function ffsl(end,id){
