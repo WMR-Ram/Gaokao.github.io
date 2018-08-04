@@ -60,7 +60,14 @@ $(function() {
         app[0].onmouseout = function () {
             picApp.style.display = 'none';
         }
-  // 手风琴效果开始
+    //购物车数量显示
+    // var number= document.getElementById('number');
+    // var dianji = document.getElementById('dianji');
+    // dinji.onclick = function () {
+    //   number.style.display = 'block';
+    // }
+    
+    // 手风琴效果开始
   	var $lis = $('#list>li');
   	$lis.mouseenter(function () {
 		var index = $(this).index();
@@ -78,5 +85,74 @@ $(function() {
   			$(e).stop().animate({left : i * 300});
   		});
   	});
-     // 手风琴效果结束
+    // 手风琴效果结束
+    //加入购物车效果
+    $(function () {
+      $('#addcar').click(function () {
+        //给每一个li设置slideDown效果
+          $('#car').stop().slideDown(1000,function() {
+          });
+          $("#car").mouseleave(function () {
+          $(this).stop().slideUp(1000,function() {
+          });
+        });
+      });
+    });
+    
+    // 选项卡切换
+    var $str = $('.goods-list').find('li');
+    var $li  = $('.goods-single').children('ul');
+    $li.each(function(i,ele){
+        $(ele).attr('data-h',i);
+    });
+    $str.each(function(i,ele){
+        var index = i;
+        $(ele).on('click',function(){
+            $li.hide();
+            $li.each(function(i,ele){
+                if(i === index*2 || i === index*2 + 1){
+                    $li.eq(i).show();
+                }
+            })
+        })
+    })
+
 });
+
+// <!-- -----右边侧边栏动态效果---------- -->
+$(document).ready(function(){
+
+    /* ----- 侧边悬浮 ---- */
+    $(document).on("mouseenter", ".suspension .a", function(){
+      var _this = $(this);
+      var s = $(".suspension");
+      var isService = _this.hasClass("a-service");
+      var isServicePhone = _this.hasClass("a-service-phone");
+      var isQrcode = _this.hasClass("a-qrcode");
+      if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+      if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+      if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+    });
+    $(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+      $(".suspension").find(".d").hide();
+    });
+    $(document).on("mouseenter", ".suspension .a-top", function(){
+      $(".suspension").find(".d").hide(); 
+    });
+    $(document).on("click", ".suspension .a-top", function(){
+      $("html,body").animate({scrollTop: 0});
+    });
+    $(window).scroll(function(){
+      var st = $(document).scrollTop();
+      var $top = $(".suspension .a-top");
+      if(st > 400){
+        $top.css({display: 'block'});
+      }else{
+        if ($top.is(":visible")) {
+          $top.hide();
+        }
+      }
+    });
+    
+  }); 
+
