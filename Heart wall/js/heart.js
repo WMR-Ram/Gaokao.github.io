@@ -13,7 +13,7 @@ $(function () {
         {id:2, 'bm':'n', xysj: "2018-7-19 22:29:5",   xy: "希望明天死情敌！",     name:"死了都要爱",  jssj:1533511211082},
         {id:3, 'bm':'n', xysj: "2016-02-17 01:01:01", xy: "努力让自己过的更好", name: "mahu",       jssj:1539155211082},
         {id:4, 'bm':'n', xysj: "2018-7-20 20:42:25",  xy: "希望能找到工作",       name: "梦游西天",   jssj:1543103211082},
-        {id:5, 'bm':'n', xysj: "2018-7-20 20:45:19",  xy: "找个女汉子似的萌妹子做老婆", name: "钱眼子",      jssj:1534100211082}
+        {id:5, 'bm':'n', xysj: "2018-7-20 20:45:19",  xy: "找个女汉子做老婆",   name: "吹灯扒蜡",      jssj:1534100211082}
                 ];
     var $tip1 = $('.tip1');
     var $cont = $('#content');
@@ -101,7 +101,7 @@ $(function () {
         //输入密码时定时器调用函数校对密码 
 
         clearTimeout(hidTimer);
-        var hidTimer = setTimeout(hidspan, 150);
+        var hidTimer = setTimeout(hidspan, 90);
         }).parent('.title').children('.Ximg').click(function () {
             $mm.val('');
             $('.mask').hide();

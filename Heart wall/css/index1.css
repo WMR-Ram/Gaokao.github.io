@@ -1,14 +1,10 @@
 .bgdiv{
-    /* width: 1920px; */
     height: 528px;
     }
     .bs{
         text-align: center;
         margin-bottom: 15px;
     }
-#pro{
-    margin-top: 90px;
-}
 .pro-pos{
     position: relative;
 }
@@ -85,4 +81,30 @@ h3{
     font-size: 30px;
     position: relative;
     margin: 0 auto;
+}
+#hot img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 670px;
+    z-index: 10;
+    position: fixed;
+}
+
+.s-jd-toolbar {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background: #37383c url(../images/side_icon.png) right ;
+    z-index: 2147483647;
+    font: 12px/150% arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;
+    display: none;
+}
+.s-jd-toolbar a {
+    display: block;
+    width: 40px;
+    height: 40px;
 }

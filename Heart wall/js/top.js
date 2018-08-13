@@ -34,5 +34,37 @@ $(function () {
         lis = $('.area-choose li');
     $('.area-choose ul').on('click', 'li', function () {
         location.text($(this).children().text());
+    });
+
+
+// 固定位置左侧广告
+    $(window).scroll(function () {
+        var scroll_top = $(window).scrollTop();
+        if (scroll_top >= 200) {
+            $("#hot").css('display','block');
+        }else {
+            $("#hot").css('display','none');
+        }
     })
-})
+});
+
+// 水波纹淡入 淡出
+$(window).scroll(function () {
+    var scroll_top = $(window).scrollTop();
+    if (scroll_top >= 4500) {
+        $("#canvas").fadeOut();
+    }else {
+        $("#canvas").fadeIn();
+    }
+    });
+
+$(window).scroll(function () {
+    var scroll_top = $(window).scrollTop();
+    if (scroll_top >= 100) {
+        $(".s-jd-toolbar").css('display','block');
+    }else {
+        $(".s-jd-toolbar").css('display','none');
+    }
+    });
+
+

@@ -60,12 +60,22 @@ $(function() {
         app[0].onmouseout = function () {
             picApp.style.display = 'none';
         }
+        
     //购物车数量显示
-    // var number= document.getElementById('number');
-    // var dianji = document.getElementById('dianji');
-    // dinji.onclick = function () {
-    //   number.style.display = 'block';
-    // }
+    // 需求：当点击addcar的时候，购物车数字加
+     var count = parseInt($('.count').text());
+    // console.log(count);
+    
+    $('.buy').click(function(){
+        count++;
+        $('.count').text(count);
+       
+        // console.log(count);
+        $('.count').css('display','block')
+        // $('.count').html(count);
+        
+
+    })
     
     // 手风琴效果开始
   	var $lis = $('#list>li');
@@ -86,18 +96,18 @@ $(function() {
   		});
   	});
     // 手风琴效果结束
-    //加入购物车效果
-    $(function () {
-      $('#addcar').click(function () {
-        //给每一个li设置slideDown效果
-          $('#car').stop().slideDown(1000,function() {
-          });
-          $("#car").mouseleave(function () {
-          $(this).stop().slideUp(1000,function() {
-          });
-        });
-      });
-    });
+    // //加入购物车效果
+    // $(function () {
+    //   $('#addcar').click(function () {
+    //     //给每一个li设置slideDown效果
+    //       $('#car').stop().slideDown(1000,function() {
+    //       });
+    //       $("#car").mouseleave(function () {
+    //       $(this).stop().slideUp(1000,function() {
+    //       });
+    //     });
+    //   });
+    // });
     
     // 选项卡切换
     var $str = $('.goods-list').find('li');

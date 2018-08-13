@@ -8,6 +8,7 @@
     right: 0;
     left: 0;
     box-shadow: 0px 0px 2px 2px #666;
+    z-index: 2000;
 }
 .w1{
     width: 1200px;
@@ -113,11 +114,11 @@
 /* 中部开始 */
 .middle {
     height: 552px;
-    margin-top: 80px;
+    margin-top: 64px;
     position: relative;
     background: url(../images/passport-banner.jpg) no-repeat -260px 20px;
 }
-.middle .zhuce {
+.middle .denglu {
     position: absolute;
     width: 302px;
     height: 320px;
@@ -128,14 +129,13 @@
     padding: 30px 42px 0 42px;
     border: 1px solid #ccc;
 }
-.middle .zhuce h2 {
+.middle .denglu h2 {
     color: #442818;
     font-size: 20px;
     font-weight: 400;
     padding-bottom: 20px;
 }
-.middle .zhuce .write {
-    display: block;
+.middle .denglu .write {
     width: 296px;
     height: 36px;
     color: #ccc;
@@ -143,24 +143,24 @@
     margin-bottom: 20px;
     padding-left: 4px;
 }
-.middle .zhuce .debark {
+.middle .denglu .debark {
     width: 302px;
     height: 48px;
     background-color: #442818;
     font-size: 20px;
     color: #fff;
-    margin-top: 10px;
+    margin-top: 20px;
     cursor: pointer;
 }
 input.fl {
     margin-top: 14px;
 }
-.middle .zhuce span {
+.middle .denglu span {
     margin-top: 12px;
     font-size: 12px;
     margin-left: 2px;
 }
-.middle .zhuce .fr {
+.middle .denglu .fr {
     margin-top: 12px;
     font-size: 12px;
     margin-left: 16px;

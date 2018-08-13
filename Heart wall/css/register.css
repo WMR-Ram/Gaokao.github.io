@@ -1,0 +1,272 @@
+/* 头部开始 */
+.header{
+    height: 44px;
+    padding:18px 0;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0px 0px 2px 2px #666;
+    z-index: 2000;
+}
+.w1{
+    width: 1200px;
+   margin: 0 auto;
+}
+.logo img{
+    height: 44px;
+    margin-right: 45px;
+}
+.nav li{
+    float: left;
+}
+.header a{
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    color:#805e4b;
+    font-size: 14px;
+}
+.nav a{
+    margin-right: 35px;
+}
+.nav a:hover{
+    color:#bb9772;
+}
+.lead>li{
+    float: left; 
+}
+.first{
+    position: relative;
+    margin-right: 35px;;
+}
+.first img{
+    display: none;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:55px;
+    left: -15px;
+    z-index: 1000;
+}
+.area-choose{
+   padding-top: 12px; 
+   padding-right: 30px;
+   position: relative
+}
+.area-choose img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.area-choose>ul{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    border:1px solid #ededed;
+    width: 110px;
+    text-align: center;
+   display: none;
+   box-shadow: 1px 2px 1px #efefef;
+   top: 50px;
+    left: -35px;
+}
+.area-choose li{
+   /* height: 15px;
+    width: 10px; */
+    text-align: center;
+}
+.area-choose a {
+   color:#d5bfaf;
+}
+.area-choose a:hover {
+    color:#805e4b;
+ }
+.area-choose i{
+    background: url(../images/icon.png) no-repeat 0px -103px ;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+}
+.area-choose span{
+    color:#805e4b;
+    cursor: pointer;
+}
+.lead>li:nth-child(3){
+    padding-right: 22px;
+}
+.lead>li:last-child{
+    padding-top: 7px;
+    margin-left: 20px;
+}
+.shop-car {
+    display: inline-block;
+    background: url(../images/icon.png) no-repeat -191px -94px;
+    background-size: 310px 120px;
+    width: 32px;
+    height: 37px;
+}
+
+/* 头部结束 */
+/* 中部开始 */
+.middle {
+    height: 552px;
+    margin-top: 64px;
+    position: relative;
+    background: url(../images/passport-banner.jpg) no-repeat -260px 20px;
+}
+.middle .zhuce {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    width: 302px;
+    height: 408px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 32px 42px 0 42px;
+}
+.middle .zhuce h2 {
+    font-weight: normal;
+    padding-bottom: 20px;
+    color: #442818;
+    font-size: 20px;
+}
+.middle .zhuce .write {
+    width: 296px;
+    height: 36px;
+    color: #ccc;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-left: 4px;
+}
+.middle .zhuce .fl {
+    height: 36px;
+    margin-top: 10px;
+}
+.middle .zhuce .dk {
+    margin-top: 0;
+}
+.middle .zhuce .register {
+    width: 302px;
+    height: 48px;
+    background-color: #442818;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.middle .zhuce .strong0 {
+    width: 220px;
+    height: 18px;
+    background: url(../images/strong.jpg);
+}
+.middle .zhuce .strong1 {
+    width: 220px;
+    height: 18px;
+    background: url(../images/strong.jpg) 0 -22px;
+}
+.middle .zhuce .strong2 {
+    width: 220px;
+    height: 18px;
+    background: url(../images/strong.jpg) 0 -42px;
+}
+.middle .zhuce .strong3 {
+    width: 220px;
+    height: 18px;
+    background: url(../images/strong.jpg) 0 -62px;
+}
+.middle .zhuce .strong4 {
+    width: 220px;
+    height: 18px;
+    background: url(../images/strong.jpg) 0 -82px;
+}
+/* 腿部开始 */
+.footer {
+    height: 330px;
+    text-align: center;
+    background-color: #333333;
+    padding-top: 50px;
+}
+.footer > img {
+    width: 96px;
+    height: 40px;
+}
+.footer ul li a {
+    color: #fff;
+}
+.footer ul li {
+    float: left;
+    margin-right: 54px;
+    margin-top: 28px;
+}
+.footer-nav {
+    margin: 0 auto;
+    width: 810px;
+}
+.footer .tuiguang {
+    margin: 0 auto;
+    width: 330px;
+}
+.footer .tuiguang .weibo, .wechat, .app {
+    width: 50px;
+    line-height: 50px;
+    height: 50px;
+    float: left;
+    margin-top: 25px;
+    margin-right: 60px;
+    border-radius: 50%;
+    background-color: #494949;
+}
+.footer .tuiguang a img {
+    width: 32px;
+    height: 28px;
+}
+.footer .tuiguang .app a {
+    color: #fff;
+    font-size: 16px;
+}
+.footer .tuiguang .weobo {
+    position: absolute;
+}
+.footer .tuiguang .we img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -24px;
+    display: none;
+}
+.footer .tuiguang .wx img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -24px;
+    display: none;
+}
+.footer .tuiguang .app #pic-app {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -24px;
+    display: none;
+}
+.footer .first-p {
+    margin-top: 20px;
+}
+.footer p {
+    color: #999;
+}
+.footer .msa {
+    border-top: 1px solid #616161;;
+    padding-top: 8px;
+}
+.footer-nav {
+    margin: 0 auto;
+    width: 810px;
+}
+
+
+
+

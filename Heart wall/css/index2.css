@@ -119,16 +119,18 @@
     width: 32px;
     height: 37px;
 }
-.shop-car #number {
+.shop-car .count {
 	float: right;
 	font-size: 6px;
 	display: inline-block;
 	height: 8px;
-	width: 8px;
+	/*width: 8px;*/
+    text-align: center;
 	padding: 2px 4px;
 	line-height: 8px;
 	border-radius: 8px 8px 8px 0px;
-	background-color: #ba9978;
+    background-color: #ba9978;
+	/*background-color: red;*/
 	color: #fff;
 	display: none;
 }

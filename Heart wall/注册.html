@@ -8,9 +8,9 @@
     <title>Document</title>
     <script src="js/jquery-1.12.4.min.js"></script>
     <link rel="stylesheet" href="css/common4.css">
-    <link rel="stylesheet" href="css/debark.css">
-    <script src="js/debark.js"></script>
-
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/register.js"></script>
+    <script src="./js/registermain.js"></script>
 </head>
 
 <body>
@@ -23,16 +23,22 @@
             <div class="nav fl">
                 <ul>
                     <li>
-                        <a href="http://www.21cake.com/">首页</a>
+                        <a href="./首页 刘姗.html">首页</a>
                     </li>
                     <li>
-                        <a href="http://www.21cake.com/gallery-index---0---1.html">蛋糕</a>
+                        <a href="./蛋糕  李鹏月.html">蛋糕</a>
                     </li>
                     <li>
-                        <a href="http://www.21cake.com/gallery-index---0---5.html">明星产品</a>
+                        <a href="./明星产品 刘健.html">明星产品</a>
                     </li>
                     <li>
-                        <a href="http://www.21cake.com/gallery-index---0---3.html">心愿墙</a>
+                        <a href="./心愿墙 孙保宁.html">心愿墙</a>
+                    </li>
+                    <li>
+                        <a href="http://www.21cake.com/activity-special_goods.html">咖啡全国送</a>
+                    </li>
+                    <li>
+                        <a href="http://b.21cake.com/">企业专送</a>
                     </li>
                 </ul>
             </div>
@@ -48,25 +54,25 @@
                         <ul>
                             <li>
                                 <a href="#">北京</a>
-                            </ii>
-                            <li>
-                                <a href="#">杭州</a>
-                            </li>
-                            <li>
-                                <a href="#">天津</a>
-                            </li>
-                            <li>
-                                <a href="#">无锡</a>
-                            </li>
-                            <li>
-                                <a href="#">广州</a>
-                            </li>
-                            <li>
-                                <a href="#">深圳</a>
-                            </li>
-                            <li>
-                                <a href="#">苏州</a>
-                            </li>
+                                </ii>
+                                <li>
+                                    <a href="#">杭州</a>
+                                </li>
+                                <li>
+                                    <a href="#">天津</a>
+                                </li>
+                                <li>
+                                    <a href="#">无锡</a>
+                                </li>
+                                <li>
+                                    <a href="#">广州</a>
+                                </li>
+                                <li>
+                                    <a href="#">深圳</a>
+                                </li>
+                                <li>
+                                    <a href="#">苏州</a>
+                                </li>
                         </ul>
                     </div>
                     </li>
@@ -75,9 +81,9 @@
                     </li>
                     <li>
                         <div>
-                            <a href="">登录</a>
+                            <a href="./登录.html">登录</a>
                             /
-                            <a href="">注册</a>
+                            <a href="./注册.html">注册</a>
                         </div>
                     </li>
                     <li>
@@ -92,15 +98,28 @@
     <!-- 中部开始 -->
     <div class="middle">
         <div class="zhuce">
-            <form action="1.php">
-                <h2>账号密码登陆</h2>
-                <input type="text" class="write" name="identity" value="请输入您的账号">
-                <input type="password" class="write">
-                <input type="submit" value="登陆" class="debark">
-                <input type="checkbox" checked="checked" class="fl">
-                <span class="fl">记住账号</span>
-                <div class="fr">去注册</div>
-                <div class="fr">忘记密码</div>
+            <form action="1.php" name="reg_testdate">
+                <h2>用户注册</h2>
+                <input type="text" class="write identification" name="identity" value="请输入您的手机号">
+                <input type="text" value="请输入您的密码" id="login_showPwd" class="write" />
+                <input type="password" id="login_password" style="display: none" class="write" />
+                <input type="text" value="请再次输入您的密码" id="login_showPwd2" class="write" />
+                <input type="password" id="login_password2" style="display: none" class="write" />
+                <div class="strong0" id="str"></div>
+                <div class="fl">
+                    <span>生日选择：</span>
+                    <select name="YYYY" onchange="YYYYDD(this.value)">
+                        <option value="">请选择 年</option>
+                    </select>
+                    <select name="MM" onchange="MMDD(this.value)">
+                        <option value="">选择 月</option>
+                    </select>
+                    <select name="DD">
+                        <option value="">选择 日</option>
+                    </select>
+                </div>
+                <div class="fl dk"><a href="./登录.html">有账号？去登陆</a></div>
+                <input type="submit" value="注册" class="register">
             </form>
         </div>
     </div>
@@ -113,7 +132,7 @@
                     <a href="#">联系我们</a>
                 </li>
                 <li>
-                    <a href="#">|</a>
+                    <a h ref="#">|</a>
                 </li>
                 <li>
                     <a href="#">订购帮助</a>
@@ -171,34 +190,6 @@
             <p>Copyright© 21Cake蛋糕官网商城 2007-2018, 版权所有 京ICP备14006254号-1</p>
         </div>
     </div>
-    <script>
-        var weibo = document.getElementsByClassName('weibo');
-        var wechat = document.getElementsByClassName('wechat');
-        var app = document.getElementsByClassName('app');
-        var firstLi = document.getElementsByClassName('first-li'); // 头部top的app下载元素
-        var picWe = document.getElementById('pic-we');
-        var picWx = document.getElementById('pic-wx');
-        var picApp = document.getElementById('pic-app');
-        var dowloadApp = document.getElementById('dowload-app'); //头部app下载的悬停出现的图片
-        weibo[0].onmouseover = function () {
-            picWe.style.display = 'block';
-        };
-        weibo[0].onmouseout = function () {
-            picWe.style.display = 'none';
-        }
-        wechat[0].onmouseover = function () {
-            picWx.style.display = 'block';
-        };
-        wechat[0].onmouseout = function () {
-            picWx.style.display = 'none';
-        }
-        app[0].onmouseover = function () {
-            picApp.style.display = 'block';
-        };
-        app[0].onmouseout = function () {
-            picApp.style.display = 'none';
-        };
-    </script>
 </body>
 
 </html>

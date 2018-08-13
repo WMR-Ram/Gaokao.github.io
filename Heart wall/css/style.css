@@ -61,7 +61,7 @@ a:-webkit-any-link{text-decoration:none;}
 .suspension .a-service .i{width:20px;height:20px;margin-top:12px;margin-left:12px;background-image:url(../images/suspension-bg.png);background-repeat:no-repeat;background-position:0 0;}
 .suspension .a-service-phone .i{width:20px;height:20px;margin-top:12px;margin-left:12px;background-image:url(../images/suspension-bg.png);background-repeat:no-repeat;background-position:-27px 0;}
 .suspension .a-qrcode .i{background-position:-44px 0;}
-.suspension .a-cart .i{background-position:-88px 0;}
+/*.suspension .a-cart .i{background-position:-88px 0;}*/
 .suspension .a-top .i{background-position:-132px 0;}
 .suspension .a-top{background:#D2D3D6;display:none;}
 .suspension .a-top:hover{background:#c0c1c3;}
