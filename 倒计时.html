@@ -2,13 +2,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>jquery倒计时</title>
+    <title>高考倒计时</title>
     <script src="jquery-1.11.1.js"></script>
     <script>
         $(function () {
             var interval = setInterval(function () {
                     var now = new Date().getTime();
-                    var end = new Date("2018/7/1/ 0:48:00");//结束的时间：年，月，日，分，秒（月的索引是0~11）
+                    var end = new Date("2024/5/7/ 9:00:00");//结束的时间：年，月，日，分，秒（月的索引是0~11）
                     var result = end - now;/*两个时间相减,得到的是毫秒ms,变成秒*/
                     if (result > 1) {
                         var second = parseInt(result/1000%60); // 计算秒 ，取余  
